@@ -9,13 +9,10 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [How It Works](#how-it-works)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Features
 - Provides personalized movie recommendations based on user ratings.
 - Supports multiple recommendation algorithms, including SVD, NMF, and KNN.
-- Interactive dashboard for users to view recommendations.
 - Ability to fine-tune recommendation algorithms through hyperparameter tuning.
 
 ## Technologies Used
