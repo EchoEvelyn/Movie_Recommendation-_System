@@ -21,7 +21,6 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 - **NumPy**: Numerical computations
 - **scikit-surprise**: Library for building and evaluating recommender systems
 - **Matplotlib** / **Seaborn**: Data visualization
-- **Flask**: (if applicable) For creating a web interface
 - **Jupyter Notebook**: For development and analysis
 
 ## Installation
