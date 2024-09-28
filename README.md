@@ -28,4 +28,4 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/movie_recommendation_system.git
+   git clone https://github.com/EchoEvelyn/Movie_Recommendation_System.git
