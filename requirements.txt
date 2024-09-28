@@ -1,0 +1,29 @@
+
+# Installation Commands and Imports for Movie Recommendation System
+
+# Install scikit-surprise library
+!pip install scikit-surprise
+
+# Import necessary libraries
+import numpy as np
+import pandas as pd
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Importing the Surprise library's model selection and algorithms
+from surprise.model_selection import KFold
+from surprise.model_selection import cross_validate
+from surprise import NormalPredictor
+from surprise import KNNBasic
+from surprise import KNNWithMeans
+from surprise import KNNWithZScore
+from surprise import KNNBaseline
+from surprise import SVD
+from surprise import SVDpp
+from surprise import NMF
+from collections import defaultdict
