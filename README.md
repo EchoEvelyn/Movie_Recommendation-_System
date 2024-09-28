@@ -40,7 +40,6 @@ To run this project locally, follow these steps:
    ```bash
    python -m venv venv
    venv\Scripts\activate
-
    
  - For macOS/Linux:
    ```bash
