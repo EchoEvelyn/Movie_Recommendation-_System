@@ -7,8 +7,7 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
-4. [Usage](#usage)
-5. [How It Works](#how-it-works)
+4. [How It Works](#how-it-works)
 
 ## Features
 - Provides personalized movie recommendations based on user ratings.
@@ -55,3 +54,12 @@ To run this project locally, follow these steps:
 6. Run the application:
    ```bash
    jupyter notebook
+
+## How it works
+The Movie Recommender System project aims to provide personalized movie recommendations based on user preferences. The system utilizes a combination of algorithms, including Singular Value Decomposition (SVD), Non-Negative Matrix Factorization (NMF), and K-Nearest Neighbors (KNN), to generate accurate suggestions. The project is structured into the following phases:
+
+   - Set-Up and Data Loading: The environment is configured, and the necessary data for building the recommendation model is loaded.
+   - Data Exploration: A thorough exploratory data analysis (EDA) is conducted to understand user behavior, movie ratings, and patterns in the dataset.
+   - Model Building: Various recommendation algorithms such as SVD, NMF, and KNN are explored. Hyperparameter tuning of SVD is performed to optimize model performance. The models are        trained and tested using evaluation metrics.
+   - Model Evaluation: The models are evaluated based on metrics like precision, recall, and accuracy to assess the recommendation quality.
+   - Recommendation Generation: Thresholds are determined to find optimal K recommendations, which are then evaluated to refine and make recommendations for users.
