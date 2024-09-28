@@ -46,6 +46,12 @@ To run this project locally, follow these steps:
    python3 -m venv venv
    source venv/bin/activate
 
-4. Install required packages:
+4. Install required packages: Make sure you have pip installed, and then run the following command to install the necessary libraries:
    ```bash
    pip install -r requirements.txt
+
+5. Load the data: Ensure you have the required datasets in the correct format. You can either download them from the internet or place them in the data directory if your project structure requires it.
+
+6. Run the application:
+   ```bash
+   jupyter notebook
