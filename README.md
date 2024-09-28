@@ -36,7 +36,7 @@ To run this project locally, follow these steps:
 
 3. Set Up a Virtual Environment (Optional but Recommended): It’s a good practice to use a virtual environment to manage dependencies for your project. You can create and activate a virtual environment using the following commands:
 
-   - For Windows:
+ - For Windows:
    ```bash
    python -m venv venv
    venv\Scripts\activate
