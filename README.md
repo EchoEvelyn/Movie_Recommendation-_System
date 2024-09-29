@@ -4,15 +4,14 @@
 This Movie Recommendation System utilizes collaborative filtering techniques to provide personalized movie recommendations based on user preferences and past interactions. The system aims to enhance user experience by suggesting movies that align with their tastes.
 
 ## Table of Contents
-1. [Features](#features)
+1. [Data](#data)
 2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
 4. [How It Works](#how-it-works)
 
-## Features
-- Provides personalized movie recommendations based on user ratings.
-- Supports multiple recommendation algorithms, including SVD, NMF, and KNN.
-- Ability to fine-tune recommendation algorithms through hyperparameter tuning.
+## Data
+
+
 
 ## Technologies Used
 - **Python**: Main programming language
