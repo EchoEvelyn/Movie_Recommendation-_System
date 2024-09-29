@@ -10,7 +10,20 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 4. [How It Works](#how-it-works)
 
 ## Data
+### Movies Dataset
+This dataset contains information about various movies. Each movie is identified by a unique movieId and includes its title and the genres it falls under.
 
+- **movieId**: A unique identifier for each movie.
+- **title**: The title of the movie, including the year of release.
+- **genres**: A combination of genres associated with the movie, separated by a pipe (|), such as "Adventure|Animation|Children".
+
+### Ratings Dataset
+This dataset contains user ratings for various movies. Each rating is associated with a user and a specific movie, along with the timestamp when the rating was given.
+
+- **userId**: A unique identifier for each user.
+- **movieId**: A unique identifier for the rated movie (corresponding to the movieId in the Movies dataset).
+- **rating**: The rating given by the user, typically on a scale from 1 to 5.
+- **timestamp**: The time when the rating was submitted, stored as a Unix timestamp.
 
 
 ## Technologies Used
@@ -22,38 +35,51 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 - **Jupyter Notebook**: For development and analysis
 
 ## Installation
-To run this project locally, follow these steps:
+### Environment Setup
 
-1. Clone the repository: Open your terminal (or command prompt) and run the following command to clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/EchoEvelyn/Movie_Recommendation_System.git
+Ensure the following Python libraries are installed:
+  
+```bash
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import nltk
 
-2. Change Directory: Navigate into the cloned repository:
-   ```bash
-   cd Movie_Recommendation_System
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from sklearn.decomposition import LatentDirichletAllocation, PCA
 
-3. Set Up a Virtual Environment (Optional but Recommended): It’s a good practice to use a virtual environment to manage dependencies for your project. You can create and activate a virtual environment using the following commands:
+import gensim
+from gensim.corpora import Dictionary
+from gensim.models import CoherenceModel
 
- - For Windows:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate
-   
- - For macOS/Linux:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+# For NLTK downloads
+nltk.download('punkt')
+nltk.download('stopwords')
+```
 
-4. Install required packages: Make sure you have pip installed, and then run the following command to install the necessary libraries:
-   ```bash
-   pip install -r requirements.txt
+### Authenticate with Google Drive:
+Since I stored the dataset in Google Drive, I need to authenticate and access it using PyDrive and Google Colab:
+```bash
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+```
+### Laod the Data From Google Drive
+The dataset (e.g., watch_reviews.csv) is stored in Google Drive, and we use the file ID to retrieve it:
+```bash
+# Google Drive file ID
+id = 'your_google_drive_file_id_here'
 
-5. Load the data: Ensure you have the required datasets in the correct format. You can either download them from the internet or place them in the data directory if your project structure requires it.
+# Download the dataset
+file = drive.CreateFile({'id': id})
+file.GetContentFile('watch_reviews.tsv')
 
-6. Run the application:
-   ```bash
-   jupyter notebook
-
+# Load the dataset into a Pandas DataFrame
+df = pd.read_csv('watch_reviews.tsv', sep='\t', on_bad_lines='skip')
+```
 ## How it works
 The Movie Recommender System project aims to provide personalized movie recommendations based on user preferences. The system utilizes a combination of algorithms, including Singular Value Decomposition (SVD), Non-Negative Matrix Factorization (NMF), and K-Nearest Neighbors (KNN), to generate accurate suggestions. The project is structured into the following phases:
 
