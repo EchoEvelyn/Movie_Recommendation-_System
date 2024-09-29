@@ -42,21 +42,21 @@ Ensure the following Python libraries are installed:
 ```bash
 import numpy as np
 import pandas as pd
+
 import matplotlib.pyplot as plt
 import seaborn as sns
-import nltk
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.cluster import KMeans
-from sklearn.decomposition import LatentDirichletAllocation, PCA
-
-import gensim
-from gensim.corpora import Dictionary
-from gensim.models import CoherenceModel
-
-# For NLTK downloads
-nltk.download('punkt')
-nltk.download('stopwords')
+from surprise.model_selection import KFold
+from surprise.model_selection import cross_validate
+from surprise import NormalPredictor
+from surprise import KNNBasic
+from surprise import KNNWithMeans
+from surprise import KNNWithZScore
+from surprise import KNNBaseline
+from surprise import SVD
+from surprise import SVDpp
+from surprise import NMF
+from collections import defaultdict
 ```
 
 #### Authenticate with Google Drive:
@@ -71,15 +71,21 @@ from oauth2client.client import GoogleCredentials
 The dataset (e.g., watch_reviews.csv) is stored in Google Drive, and we use the file ID to retrieve it:
 ```bash
 # Google Drive file ID
-id = 'your_google_drive_file_id_here'
+id_1 = 'your_google_drive_ratings_file_id_here'
+id_2 = 'your_google_drive_movies_file_id_here'
 
 # Download the dataset
-file = drive.CreateFile({'id': id})
-file.GetContentFile('watch_reviews.tsv')
+file_1 = drive.CreateFile({'id': id_1})
+file_1.GetContentFile('ratings.csv')
+file_2 = drive.CreateFile({'id': id_2})
+file_2.GetContentFile('movies.csv')
 
 # Load the dataset into a Pandas DataFrame
-df = pd.read_csv('watch_reviews.tsv', sep='\t', on_bad_lines='skip')
+ratings = pd.read_csv('ratings.csv')
+movies = pd.read_csv('movies.csv')
 ```
+
+
 ## How it works
 The Movie Recommender System project aims to provide personalized movie recommendations based on user preferences. The system utilizes a combination of algorithms, including Singular Value Decomposition (SVD), Non-Negative Matrix Factorization (NMF), and K-Nearest Neighbors (KNN), to generate accurate suggestions. The project is structured into the following phases:
 
