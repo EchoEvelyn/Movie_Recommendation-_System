@@ -10,14 +10,14 @@ This Movie Recommendation System utilizes collaborative filtering techniques to 
 4. [How It Works](#how-it-works)
 
 ## Data
-### Movies Dataset
+#### Movies Dataset
 This dataset contains information about various movies. Each movie is identified by a unique movieId and includes its title and the genres it falls under.
 
 - **movieId**: A unique identifier for each movie.
 - **title**: The title of the movie, including the year of release.
 - **genres**: A combination of genres associated with the movie, separated by a pipe (|), such as "Adventure|Animation|Children".
 
-### Ratings Dataset
+#### Ratings Dataset
 This dataset contains user ratings for various movies. Each rating is associated with a user and a specific movie, along with the timestamp when the rating was given.
 
 - **userId**: A unique identifier for each user.
