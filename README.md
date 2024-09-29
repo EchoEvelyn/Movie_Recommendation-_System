@@ -35,7 +35,7 @@ This dataset contains user ratings for various movies. Each rating is associated
 - **Jupyter Notebook**: For development and analysis
 
 ## Installation
-### Environment Setup
+#### Environment Setup
 
 Ensure the following Python libraries are installed:
   
@@ -59,7 +59,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 ```
 
-### Authenticate with Google Drive:
+#### Authenticate with Google Drive:
 Since I stored the dataset in Google Drive, I need to authenticate and access it using PyDrive and Google Colab:
 ```bash
 from pydrive.auth import GoogleAuth
